@@ -1,0 +1,27 @@
+<mat-table [dataSource]="produits">
+    <!-- Définition des colonnes -->
+    <ng-container matColumnDef="nom">
+      <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
+      <mat-cell *matCellDef="let produit"> {{ produit.nom }} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let produit"> {{ produit.description }} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="quantite">
+      <mat-header-cell *matHeaderCellDef> Quantité </mat-header-cell>
+      <mat-cell *matCellDef="let produit"> {{ produit.quantite }} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="prix">
+      <mat-header-cell *matHeaderCellDef> Prix </mat-header-cell>
+      <mat-cell *matCellDef="let produit"> {{ produit.prix }} </mat-cell>
+    </ng-container>
+  
+    <!-- Affichage des lignes -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  
